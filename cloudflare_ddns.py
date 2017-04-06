@@ -56,6 +56,7 @@ def main():
     quiet = config.get('quiet')
     aws_use_ec2metadata = config.get('aws_use_ec2metadata')
     use_dig = config.get('use_dig')
+    local_ip = config.get('local_ip')
 
     auth_headers = {
         'X-Auth-Key': cf_key,
