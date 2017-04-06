@@ -28,6 +28,11 @@ cf_service_mode: 1
 # the record didn't change.
 quiet: false
 
+# If set true, we call local ip service and update Cloudflare with local network adress.
+# This is useful in private network setting, where a dns updated needed. This only works eth0
+# interface in this time.
+local_ip: false
+
 # If set to true then we call the ec2metadata service for the instance
 # public ip address rather than an external service.
 aws_use_ec2metadata: false

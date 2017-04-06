@@ -81,6 +81,9 @@ def main():
         output, err = p.communicate()
         rc = p.returncode
         public_ip = output.decode().rstrip()
+    elif local_ip:
+        f = os.popen('ifconfig eth0 | grep "inet\ addr" | cut -d: -f2 | cut -d" " -f1')
+        public_ip=f.read().strip()
     else:
         public_ip = requests.get("https://ipv4.icanhazip.com/").text.strip()
         # public_ip = '127.0.0.100'
